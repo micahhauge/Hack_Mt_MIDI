@@ -1,6 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{0FF8195A-E508-393B-C055-4F511E870FCF}") = "Midi Project", "Assembly-CSharp-firstpass.csproj", "{7E0ACA99-B189-B61A-F417-5F53E69412F9}"
+EndProject
 Project("{0FF8195A-E508-393B-C055-4F511E870FCF}") = "Midi Project", "Assembly-CSharp.csproj", "{A7250C4F-B034-804B-2AB2-1D3EFF3608FF}"
 EndProject
 Project("{0FF8195A-E508-393B-C055-4F511E870FCF}") = "Midi Project", "Assembly-CSharp-Editor.csproj", "{E83945D4-EE04-1E0C-C6FB-FFF0FF3A8E73}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E0ACA99-B189-B61A-F417-5F53E69412F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E0ACA99-B189-B61A-F417-5F53E69412F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E0ACA99-B189-B61A-F417-5F53E69412F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E0ACA99-B189-B61A-F417-5F53E69412F9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A7250C4F-B034-804B-2AB2-1D3EFF3608FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A7250C4F-B034-804B-2AB2-1D3EFF3608FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7250C4F-B034-804B-2AB2-1D3EFF3608FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
