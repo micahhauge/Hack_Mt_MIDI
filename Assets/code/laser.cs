@@ -26,6 +26,7 @@ public class laser : MonoBehaviour {
         if (other.attachedRigidbody)
         {
             other.attachedRigidbody.useGravity = true;
+			iTween.RotateBy(other.gameObject, new Vector3(12, 2, 4), 30f);
         }
 
         

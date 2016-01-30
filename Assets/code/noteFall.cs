@@ -29,8 +29,8 @@ public class noteFall : MonoBehaviour {
 	}
 
 
-	void OnTriggerEnter(Collider other)
+	void OnCollisionEnter(Collision other)
 	{
-			
+		Debug.Log("HIT");
 	}
 }
