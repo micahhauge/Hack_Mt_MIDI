@@ -5,7 +5,7 @@ public class laser : MonoBehaviour {
 
 	public float speed;
 	private bool hasImpacted = false;
-
+    
 	// Use this for initialization
 	void Start () {
 	

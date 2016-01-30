@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 public class noteFall : MonoBehaviour {
 
 	public float speed;
 	public float timeOffset;
 	public spawner spawn;
 	public GameObject spawnerObj;
+    
 	public void setTimeOffset(float to){
 		//timeOffset=to;
 	}
