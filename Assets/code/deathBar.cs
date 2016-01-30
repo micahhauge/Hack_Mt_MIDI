@@ -22,7 +22,7 @@ public class deathBar : MonoBehaviour {
 
 	void OnTriggerEnter(Collider coll)
 	{
-		Debug.Log("hit");
+		Debug.Log("the player was hit");
 		lives--;
 	}
 }

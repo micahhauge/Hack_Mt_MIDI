@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A7250C4F-B034-804B-2AB2-1D3EFF3608FF}</ProjectGuid>
+    <ProjectGuid>{C8E2F3E8-EAF5-2A69-C446-2FE240398EBB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -49,6 +49,9 @@
      <Compile Include="Assets\MidiJack\MidiDriver.cs" />
      <Compile Include="Assets\MidiJack\MidiMaster.cs" />
      <Compile Include="Assets\MidiJack\MidiStateUpdater.cs" />
+     <Compile Include="Assets\code\Enemy.cs" />
+     <Compile Include="Assets\code\LiveText.cs" />
+     <Compile Include="Assets\code\Overseer.cs" />
      <Compile Include="Assets\code\deathBar.cs" />
      <Compile Include="Assets\code\destroyObjectBar.cs" />
      <Compile Include="Assets\code\laser.cs" />
@@ -67,7 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{7E0ACA99-B189-B61A-F417-5F53E69412F9}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{19B0DAD5-F4D8-6D28-4669-839F311A656A}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

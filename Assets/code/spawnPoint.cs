@@ -9,10 +9,10 @@ public class spawnPoint : MonoBehaviour {
 	private bool beamOn = false;
 
 	private GameObject clone;
-
+	public Overseer EnemyList;
 	// Use this for initialization
 	void Start () {
-	
+		EnemyList = GameObject.Find("Overseer").GetComponent<Overseer>();
 	}
 	
 	// Update is called once per frame
@@ -22,6 +22,7 @@ public class spawnPoint : MonoBehaviour {
 		{
 			beamOn = true;
 			clone = Instantiate(laser, transform.position, Quaternion.identity) as GameObject;
+			EnemyList.recieveAttack(key);
 		}
 
 		if( (beamOn == true) && (MidiJack.MidiMaster.GetKey(0,key)==0))
