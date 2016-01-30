@@ -15,7 +15,7 @@ public class LiveText: MonoBehaviour
         lives = reference.lives;
         text = GetComponent<Text>();
         text.text = "Lives : " + lives;
-        Debug.Log(text.text);
+        //Debug.Log(text.text);
         
     }
 

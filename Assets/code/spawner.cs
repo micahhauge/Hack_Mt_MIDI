@@ -15,18 +15,19 @@ public class spawner : MonoBehaviour {
 	private System.IO.StreamReader file;
 	private string line;
 	public GameObject noteObject;
-	private GameObject clone;
+	
 	private int length;
-
+    public int counter = 0;
     deathBar reference;
 
-    public List<Enemy> EnemyList;
+    public Overseer EnemyList;
 
     // Use this for initialization
     void Start () {
 		file = new System.IO.StreamReader(Application.dataPath +"/gen_level/"+ levelname);
 		length = Int32.Parse(file.ReadLine());
         line = file.ReadLine();
+        EnemyList = GameObject.Find("Overseer").GetComponent<Overseer>();
         //int counter = 0;
         //int size=Int32.Parse(file.ReaTdLine());
         //timer=0;
@@ -63,31 +64,39 @@ public class spawner : MonoBehaviour {
 	{
 		timer = timer + Time.deltaTime;
 		string[] row = line.Split(' ');
+        /*
         for( int i=0;i < EnemyList.Count; i++)
         {
-            EnemyList[i].distFromPlayer--;
+            //EnemyList[i].distFromPlayer--;
             //note to change this later
-            if(EnemyList[i].distFromPlayer < 10)
+            
+            if (EnemyList[i].distFromPlayer < 10)
             {
                 reference.lives--;
 
             }
-
+            
         }
+        */
+		//Debug.Log(row[0]);
 
-		Debug.Log(row[0]);
 		if (float.Parse(row[0]) < timer)
 		{
-			//If it's time to spawn a new note, do so
-			//Debug.Log("SPawn note");
-			clone = Instantiate(noteObject, transform.position, Quaternion.identity) as GameObject;
+            //If it's time to spawn a new note, do so
+            //Debug.Log("SPawn note");
+            GameObject tmp = Instantiate(noteObject, transform.position, Quaternion.identity) as GameObject;
+            note = Int32.Parse(row[1]);
+            tmp.transform.Translate(Vector3.right * (note - 56));
+            //clone.Add ((Instantiate(noteObject, transform.position, Quaternion.identity) as GameObject));
 
-			note=Int32.Parse(row[1]);
-			clone.transform.Translate(Vector3.right * (note-56));
             //Debug.Log(note);
             Duration = float.Parse(row[2]);
-            EnemyList.Add(new Enemy(note, (int)Duration) );
-
+            Enemy E= new Enemy(note, (int)Duration, tmp);
+            
+            EnemyList.Add(E);
+            //Debug.Log(EnemyList.Contains(E));
+            counter++;
+            
 			//And read the next line
 		    line = file.ReadLine();
 		}

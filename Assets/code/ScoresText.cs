@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
-namespace Assets.code
-{
    
     class ScoresText : MonoBehaviour
     {
@@ -23,5 +20,9 @@ namespace Assets.code
 
             text.text = "Score: " + Num;
         }
+        public void addPoints(uint n)
+        {
+        Num = Num + n;
+        }
     }
-}
+

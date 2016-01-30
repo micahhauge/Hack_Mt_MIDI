@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C8E2F3E8-EAF5-2A69-C446-2FE240398EBB}</ProjectGuid>
+    <ProjectGuid>{31D6F9A2-66FB-7EAA-8200-0AC148A62FA0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -51,6 +51,7 @@
      <Compile Include="Assets\MidiJack\MidiStateUpdater.cs" />
      <Compile Include="Assets\code\Enemy.cs" />
      <Compile Include="Assets\code\LiveText.cs" />
+     <Compile Include="Assets\code\Overseer.cs" />
      <Compile Include="Assets\code\ScoresText.cs" />
      <Compile Include="Assets\code\deathBar.cs" />
      <Compile Include="Assets\code\laser.cs" />

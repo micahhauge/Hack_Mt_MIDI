@@ -5,11 +5,11 @@ public class laser : MonoBehaviour {
 
 	public float speed;
 	private bool hasImpacted = false;
-    
+    ScoresText st;
 	// Use this for initialization
 	void Start () {
-	
-	}
+	st= GameObject.Find("ScoreBoard").GetComponent<ScoresText>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,7 +22,7 @@ public class laser : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 
 		hasImpacted = true;
-
+        st.addPoints(100);
         if (other.attachedRigidbody)
         {
             other.attachedRigidbody.useGravity = true;

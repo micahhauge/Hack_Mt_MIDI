@@ -26,7 +26,7 @@ public class deathBar : MonoBehaviour {
 
 	void OnTriggerEnter(Collider coll)
 	{
-		Debug.Log("hit");
+		//Debug.Log("hit");
 		lives--;
 	}
 }
