@@ -50,6 +50,7 @@
      <Compile Include="Assets\MidiJack\MidiMaster.cs" />
      <Compile Include="Assets\MidiJack\MidiStateUpdater.cs" />
      <Compile Include="Assets\code\deathBar.cs" />
+     <Compile Include="Assets\code\destroyObjectBar.cs" />
      <Compile Include="Assets\code\laser.cs" />
      <Compile Include="Assets\code\laserKill.cs" />
      <Compile Include="Assets\code\noteFall.cs" />

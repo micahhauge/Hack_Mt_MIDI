@@ -17,6 +17,19 @@ public class spawnPoint : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if( (beamOn == false) && (MidiJack.MidiMaster.GetKey(0,key) > 0))
+		{
+			beamOn = true;
+			clone = Instantiate(laser, transform.position, Quaternion.identity) as GameObject;
+		}
+
+		if( (beamOn == true) && (MidiJack.MidiMaster.GetKey(0,key)==0))
+		{
+			beamOn = false;
+			Destroy(clone);
+		}
+		/*
 		if ((MidiJack.MidiMaster.GetKeyDown(key) || Input.GetKeyDown(keyboardKey)) && beamOn == false)
 		{
 			Debug.Log("Key Pressed");
@@ -30,7 +43,6 @@ public class spawnPoint : MonoBehaviour {
 			beamOn = false;
 			Destroy(clone);
 		}
-
-
+*/
 	}
 }
