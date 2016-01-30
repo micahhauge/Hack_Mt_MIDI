@@ -6,9 +6,11 @@ public class laser : MonoBehaviour {
 	public float speed;
 	private bool hasImpacted = false;
     ScoresText st;
-	// Use this for initialization
-	void Start () {
+    public Overseer EnemyList;
+    // Use this for initialization
+    void Start () {
 	st= GameObject.Find("ScoreBoard").GetComponent<ScoresText>();
+    EnemyList = GameObject.Find("Overseer").GetComponent<Overseer>();
     }
 	
 	// Update is called once per frame
@@ -23,10 +25,13 @@ public class laser : MonoBehaviour {
 
 		hasImpacted = true;
         st.addPoints(100);
+        
         if (other.attachedRigidbody)
         {
             other.attachedRigidbody.useGravity = true;
         }
+
+
 
         
     }

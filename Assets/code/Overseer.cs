@@ -40,9 +40,9 @@ public class Overseer : MonoBehaviour
     public void Add(Enemy E)
     {
         EnemyList.Add(E);
-        Debug.Log(E.getHealth());
-        Debug.Log(EnemyList.FindLast(x => x.getHealth() == 999).getMidiId());
+        //Debug.Log(E.getHealth());
+        //Debug.Log(EnemyList.FindLast(x => x.getHealth() == 999).getMidiId());
         EnemyList.FindLast(x => x.getHealth() == 999).setHealth(0);
-        Debug.Log(EnemyList.FindLast(x=> x.getHealth() == 0).getMidiId());
+        //Debug.Log(EnemyList.FindLast(x=> x.getHealth() == 0).getMidiId());
     }
 }
