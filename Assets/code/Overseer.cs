@@ -24,7 +24,7 @@ public class Overseer : MonoBehaviour
             if (enemy.midiId == source_MidiId/* && enemy.distance < VULNERABLE_THRESHOLD*/)
             {
                 Debug.Log(enemy.health);
-                enemy.health -=1;
+                enemy.health -=DAMAGE_AMOUNT;
                 if(enemy.health <= 0)
                 {
                     EnemyList.Remove(enemy);

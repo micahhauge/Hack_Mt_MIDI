@@ -21,18 +21,5 @@ public class laser : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter(Collider other) {
 
-		hasImpacted = true;
-        st.addPoints(100);
-        
-        if (other.attachedRigidbody)
-        {
-            other.attachedRigidbody.useGravity = true;
-        }
-
-
-
-        
-    }
 }

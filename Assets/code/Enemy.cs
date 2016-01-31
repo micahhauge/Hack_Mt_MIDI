@@ -17,7 +17,7 @@ using UnityEngine.UI;
 
         public Enemy(int id, float siz, GameObject i)
         {
-            health = 10 * siz;  // based on row[2] data
+            health = 1000000 * siz;  // based on row[2] data
             size = siz;
             midiId = id;
             //distance = 100.0f;
