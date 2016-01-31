@@ -8,27 +8,36 @@ using UnityEngine.UI;
 
     public class Enemy : MonoBehaviour
     {
-        public int health;
-        public int size;
-        public int midiId; //
-        public int distance;
+        public float health;   // hits (duration) of note
+        public float size;     // length of spawned object
+        public int midiId;   // int key code
+    public float speed; //the speed of the key
+        //public float distance;  // available in position
         public GameObject instance;
 
-        public Enemy(int t, int s, GameObject i)
+        public Enemy(int id, float siz, GameObject i)
         {
-            health = 999;
-            size = s;
-            midiId = t;
-            distance = 100;
+            health = 10 * siz;  // based on row[2] data
+            size = siz;
+            midiId = id;
+            //distance = 100.0f;
             instance = i;
         }
-        public int getHealth(){ return health; }
-        public  int getSize() { return size; }
+        public void destroy()
+    {
+        gameObject.transform.GetComponent<Rigidbody>().useGravity = true;
+    }
+        public void Update()
+    {
+        transform.Translate(Vector3.down * Time.deltaTime * speed);
+    }
+        public float getHealth(){ return health; }
+        public float getSize() { return size; }
         public int getMidiId() { return midiId; }
-        public int getDistance() { return distance; }
-    public void setHealth(int h) { health=h; }
-    public void setSize(int s) {  size=s; }
-    public void setMidiId(int m) {  midiId=m; }
-    public void setDistance(int d) {  distance=d; }
+        //public int getDistance() { return distance; }
+        public void setHealth(float h) { health=h; }
+        public void setSize(float s) {  size=s; }
+        public void setMidiId(int id) {  midiId=id; }
+        //public void setDistance(int d) {  distance=d; }
 }
 

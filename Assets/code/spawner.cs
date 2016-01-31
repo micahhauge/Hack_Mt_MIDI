@@ -86,13 +86,13 @@ public class spawner : MonoBehaviour {
             //Debug.Log("SPawn note");
             GameObject tmp = Instantiate(noteObject, transform.position, Quaternion.identity) as GameObject;
             note = Int32.Parse(row[1]);
+            Enemy E = tmp.GetComponent<Enemy>();
+            E.midiId = note;
+            E.health = 10 * float.Parse(row[2]);
+            E.size = float.Parse(row[2]);
             tmp.transform.Translate(Vector3.right * (note - 56));
             //clone.Add ((Instantiate(noteObject, transform.position, Quaternion.identity) as GameObject));
-
             //Debug.Log(note);
-            Duration = float.Parse(row[2]);
-            Enemy E= new Enemy(note, (int)Duration, tmp);
-            
             EnemyList.Add(E);
             //Debug.Log(EnemyList.Contains(E));
             counter++;
@@ -100,6 +100,7 @@ public class spawner : MonoBehaviour {
 			//And read the next line
 		    line = file.ReadLine();
 		}
+
 
 		//TODO: REPLACE THIS SPIN WAIT
 
@@ -114,6 +115,5 @@ public class spawner : MonoBehaviour {
 	}
 	public double getTime(){
 		return timer;
-
 	}
 }

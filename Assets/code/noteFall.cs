@@ -24,7 +24,7 @@ public class noteFall : MonoBehaviour {
 		//Debug.Log(timeOffset);
 		//if (timeOffset >= spawn.getTime())
 		//{
-			transform.Translate(Vector3.down * Time.deltaTime * speed);
+
 		//}
 		 	
 	}
