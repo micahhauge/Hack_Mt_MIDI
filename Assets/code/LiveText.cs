@@ -11,10 +11,10 @@ public class LiveText: MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //reference = GameObject.Find("DeathBox").GetComponent<deathBar>();
-        //lives = reference.lives;
+        reference = GameObject.Find("DeathBox").GetComponent<deathBar>();
+        lives = reference.lives;
         text = GetComponent<Text>();
-        //text.text = "Lives : " + lives;
+        text.text = "Lives : " + lives;
         //Debug.Log(text.text);
         
     }

@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 public class noteFall : MonoBehaviour {
 
 	public float speed;
 	public float timeOffset;
-	public float health;
 	public spawner spawn;
 	public GameObject spawnerObj;
+    
 	public void setTimeOffset(float to){
 		//timeOffset=to;
 	}
@@ -16,7 +16,6 @@ public class noteFall : MonoBehaviour {
 	void Start () {
 		//timeOffset=0;
 		//spawn = spawnerObj.GetComponent<spawner>();
-		health=1;
 	}
 	
 	// Update is called once per frame
@@ -25,21 +24,14 @@ public class noteFall : MonoBehaviour {
 		//Debug.Log(timeOffset);
 		//if (timeOffset >= spawn.getTime())
 		//{
-			transform.Translate(Vector3.down * Time.deltaTime * speed);
+
 		//}
-		if(health == 0) {
-			Destroy(gameObject);
-		}
+		 	
 	}
 
 
-	void OnCollisionEnter(Collision other)
+	void OnTriggerEnter(Collider other)
 	{
-		if(other.gameObject.name == "laser") 
-		{
-			health -= 1;
-		}
-		Debug.Log("HIT");
-		Destroy(gameObject);
+			
 	}
 }

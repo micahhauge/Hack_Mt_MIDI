@@ -46,8 +46,19 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\MidiJack\Editor\MidiJackWindow.cs" />
-     <None Include="Assets\gen_level\luke.txt" />
+     <None Include="Assets\gen_level\welcome.txt" />
+     <None Include="Assets\gen_level\lean.txt" />
+     <None Include="Assets\gen_level\final.txt" />
+     <None Include="Assets\gen_level\twinkle.txt" />
+     <None Include="Assets\gen_level\aha.txt" />
+     <None Include="Assets\gen_level\test.txt" />
+     <None Include="Assets\gen_level\lamb.txt" />
+     <None Include="Assets\gen_level\megalo.txt" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\gen_level\starwars.txt" />
+     <None Include="Assets\gen_level\adele.txt" />
+     <None Include="Assets\gen_level\smb.txt" />
+     <None Include="Assets\gen_level\storms.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>

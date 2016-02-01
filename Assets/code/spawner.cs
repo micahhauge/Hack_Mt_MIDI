@@ -11,6 +11,11 @@ public class spawner : MonoBehaviour {
 	public int note;
 	public float Duration;
 	public double timer;
+	public float textSpeed;
+	public GameObject text;
+	public float healthMul;
+	public bool gameStarted = false;
+
 
 	private System.IO.StreamReader file;
 	private string line;
@@ -18,16 +23,15 @@ public class spawner : MonoBehaviour {
 	
 	private int length;
     public int counter = 0;
-   // deathBar reference;
+    deathBar reference;
 
     public Overseer EnemyList;
 
     // Use this for initialization
     void Start () {
-		file = new System.IO.StreamReader(Application.dataPath +"/gen_level/"+ levelname);
-		length = Int32.Parse(file.ReadLine());
-//		Debug.Log(length);
-        line = file.ReadLine();
+		
+
+
         EnemyList = GameObject.Find("Overseer").GetComponent<Overseer>();
         //int counter = 0;
         //int size=Int32.Parse(file.ReaTdLine());
@@ -59,34 +63,53 @@ public class spawner : MonoBehaviour {
 		yield return new WaitForSeconds((int)t); // NOOOOOOOOOO DUMB DUMB
 
 	}
-
+	public void setFile(string levelname, string levelDisplay){
+		file = new System.IO.StreamReader(Application.dataPath +"/gen_level/"+ levelname);
+		gameStarted = true;
+		Debug.Log("Game Started");
+		length = Int32.Parse(file.ReadLine());
+		line = file.ReadLine();
+		GameObject myText = Instantiate(text, new Vector3(-18, 52, 1), this.transform.rotation) as GameObject;
+		TextMesh tm = myText.GetComponent<TextMesh>();
+		tm.text = levelDisplay;
+		iTween.MoveBy(myText, new Vector3(0f, -100, 0f), 50f);
+	}
 	// Update is called once per frame
 	void Update () 
 	{
-		timer = timer + Time.deltaTime;
-		string[] row = line.Split(' ');
-
-		//Debug.Log(row[0]);
-		if (float.Parse(row[0]) < timer)
+		if (gameStarted == true)
 		{
-			//If it's time to spawn a new note, do so
-			//Debug.Log("SPawn note");
-			GameObject tmp = Instantiate(noteObject, transform.position, Quaternion.identity) as GameObject;
+			if(length>0)
+			{
+			timer = timer + Time.deltaTime;
+			string[] row = line.Split(' ');
 
-			note=Int32.Parse(row[1]);
-			tmp.transform.Translate(Vector3.right * (note-56));
+			if (float.Parse(row[0]) < timer)
+			{
+					//Debug.Log(row[1]);
+	            	//If it's time to spawn a new note, do so
+					GameObject tmp = Instantiate(noteObject, GameObject.Find(row[1]).transform.position, Quaternion.identity) as GameObject;
+	            	note = Int32.Parse(row[1]);
+	            	Enemy E = tmp.GetComponent<Enemy>();
+	        	    E.midiId = note;
+	    	        E.health = healthMul * float.Parse(row[2]);
+		            E.size = float.Parse(row[2]);
+					//tmp.transform.Translate(Vector3.right * (note - 59));
 
-			EnemyList.Add(new Enemy(note,float.Parse(row[2]) , tmp ));
-			//Debug.Log(note);
-
-			//And read the next line
-			line = file.ReadLine();
+	            	EnemyList.Add(E);
+						
+	            	counter++;
+	            	
+					//And read the next line
+			    	line = file.ReadLine();
+					length--;
+				}
+			}
 		}
-
 
 	}
 	public double getTime(){
 		return timer;
-
 	}
+
 }

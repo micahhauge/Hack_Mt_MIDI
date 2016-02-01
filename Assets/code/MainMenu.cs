@@ -1,24 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class destroyObjectBar : MonoBehaviour {
-
+public class MainMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+	
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
-
-
-
+	
 	}
 
-	void OnTriggerEnter(Collider coll)
+	void OnMouseDown()
 	{
-		Debug.Log("hit");
-		Destroy(coll.gameObject);
+		Application.LoadLevel("game");
 	}
 }

@@ -8,42 +8,39 @@ using UnityEngine.UI;
 
     public class Enemy : MonoBehaviour
     {
-        public int health;
-        public float size;
-        public int midiId; //
-        public float distance;
+        public float health;   // hits (duration) of note
+        public float size;     // length of spawned object
+        public int midiId;   // int key code
+    public float speed; //the speed of the key
+        //public float distance;  // available in position
         public GameObject instance;
-		public float speed;
-        public Enemy(int t, float s, GameObject i)
+
+        public Enemy(int id, float siz, GameObject i)
         {
-            health = 1;
-            size = s;
-            midiId = t;
-            distance = 100;
+            health =siz;  // based on row[2] data
+            size = siz;
+            midiId = id;
+            //distance = 100.0f;
             instance = i;
         }
-        public int getHealth(){ return health; }
-        public  float getSize() { return size; }
+	//when 
+        public void destroy()
+   		{
+        	//gameObject.transform.GetComponent<Rigidbody>().useGravity = true;
+			iTween.ColorTo(this.gameObject, Color.blue, 0.2f);
+			iTween.MoveBy(this.gameObject, new Vector3(0,0,500), 50f);
+    	}
+        public void Update()
+    	{
+        	transform.Translate(Vector3.down * Time.deltaTime * speed);
+    	}
+        public float getHealth(){ return health; }
+        public float getSize() { return size; }
         public int getMidiId() { return midiId; }
-		public float getDistance() { return instance.transform.localPosition.y; }
-		public void setHealth(int h) { health=h; }
-	    public void setSize(float s) {  size=s; }
-	    public void setMidiId(int m) {  midiId=m; }
-	    public void setDistance(float d) {  distance=d; }
-		void OnCollisionEnter(Collision other)
-		{
-		if(other.gameObject.name == "laser") 
-		{
-			health -= 1;
-		}
-			Debug.Log("HIT");
-			Destroy(gameObject);
-		}
-	void Start(){
-		
-	}
-	void Update(){
-		transform.Translate(Vector3.down * Time.deltaTime * speed);
-	}
+        //public int getDistance() { return distance; }
+        public void setHealth(float h) { health=h; }
+        public void setSize(float s) {  size=s; }
+        public void setMidiId(int id) {  midiId=id; }
+        //public void setDistance(int d) {  distance=d; }
 }
 

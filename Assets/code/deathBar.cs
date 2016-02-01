@@ -1,18 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class deathBar : MonoBehaviour {
 
-	public int lives = 300;
-
+	public int lives = 50;
+    //Text text;
 	// Use this for initialization
 	void Start () {
-	
-	}
+        //text = GetComponent<Text>();
+        //text.text = "Lives : " + lives;
+       // Debug.Log(text.text);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		if (lives == 0)
+        //text.text = "Lives : " + lives;
+        if (lives == 0)
 		{
 			Application.LoadLevel("gameover");
 		}
@@ -22,7 +26,7 @@ public class deathBar : MonoBehaviour {
 
 	void OnTriggerEnter(Collider coll)
 	{
-		Debug.Log("the player was hit");
+		//Debug.Log("hit");
 		lives--;
 	}
 }

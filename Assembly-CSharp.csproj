@@ -51,16 +51,32 @@
      <Compile Include="Assets\MidiJack\MidiStateUpdater.cs" />
      <Compile Include="Assets\code\Enemy.cs" />
      <Compile Include="Assets\code\LiveText.cs" />
+     <Compile Include="Assets\code\MainMenu.cs" />
      <Compile Include="Assets\code\Overseer.cs" />
+     <Compile Include="Assets\code\ScoresText.cs" />
+     <Compile Include="Assets\code\aleanMove.cs" />
      <Compile Include="Assets\code\deathBar.cs" />
-     <Compile Include="Assets\code\destroyObjectBar.cs" />
      <Compile Include="Assets\code\laser.cs" />
      <Compile Include="Assets\code\laserKill.cs" />
+     <Compile Include="Assets\code\loadLevel.cs" />
      <Compile Include="Assets\code\noteFall.cs" />
+     <Compile Include="Assets\code\play.cs" />
      <Compile Include="Assets\code\spawnPoint.cs" />
      <Compile Include="Assets\code\spawner.cs" />
-     <None Include="Assets\gen_level\luke.txt" />
+     <Compile Include="Assets\code\textInto.cs" />
+     <None Include="Assets\gen_level\welcome.txt" />
+     <None Include="Assets\gen_level\lean.txt" />
+     <None Include="Assets\gen_level\final.txt" />
+     <None Include="Assets\gen_level\twinkle.txt" />
+     <None Include="Assets\gen_level\aha.txt" />
+     <None Include="Assets\gen_level\test.txt" />
+     <None Include="Assets\gen_level\lamb.txt" />
+     <None Include="Assets\gen_level\megalo.txt" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\gen_level\starwars.txt" />
+     <None Include="Assets\gen_level\adele.txt" />
+     <None Include="Assets\gen_level\smb.txt" />
+     <None Include="Assets\gen_level\storms.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
